@@ -88,11 +88,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-browserify');
 
-  // Default task.
   grunt.registerTask('build', [
-    'jshint',
-    // 'qunit',
     'browserify'
+  ]);
+
+  grunt.registerTask('test',[
+    'jshint',
+    // 'qunit'
   ]);
 
   grunt.registerTask('dev', [
