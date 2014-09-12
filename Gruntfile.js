@@ -59,24 +59,24 @@ module.exports = function(grunt) {
         files: '<%= jshint.gruntfile.src %>',
         tasks: ['jshint:gruntfile']
       },
-      lib_test: {
-        files: '<%= jshint.lib_test.src %>',
-        tasks: ['jshint:lib_test', 'qunit']
-      },
+      // lib_test: {
+      //   files: '<%= jshint.lib_test.src %>',
+      //   tasks: ['jshint:lib_test', 'qunit']
+      // },
       app: {
         options: {
           livereload: true
         },
-      files: ['lib/**/*.js'],
-      tasks: ['build']
+        files: ['lib/**/*.js'],
+        tasks: ['build']
+      }
     },
 
     connect: {
       server: {
         options: {
           base: './public',
-          port: 4000,
-          keepalive: true
+          port: 4000
         }
       }
     }
@@ -100,6 +100,4 @@ module.exports = function(grunt) {
     'connect:server',
     'watch'
   ]);
-
-
 };
